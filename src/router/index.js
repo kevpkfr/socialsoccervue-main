@@ -27,4 +27,4 @@ const routes = [
   { path: '/informacion-ju', name: 'InformacionJugador', component: InformacionJu, meta: { requiresAuth: true } },
   { path: '/resultadosequip', name: 'Resultadosequip', component: Resultadosequip, meta: { requiresAuth: true } },
   { path: '/tabla-completa', name: 'TablaCompleta', component: TablaCompleta, meta: { requiresAuth: true } },
-  { path: '/login', name: 'login', component: Login }, 
+  { path: '/login', name: 'login', component: Login }, ]
