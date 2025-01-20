@@ -9,12 +9,11 @@ const __dirname = dirname(__filename);
 export default defineConfig({
   plugins: [vue()],
   resolve: {
-    alias: [
-      {
-        find: '@', // Tu alias
-        replacement: resolve(__dirname, './src'), 
-      },
-    ],
+    alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
   },
-  base: '/',
+  server: {
+    host: '0.0.0.0',  // Permite que Railway acceda al servidor
+    port: process.env.PORT || 5173,  // Usa el puerto dinámico de Railway
+    strictPort: true, // Evita cambios inesperados de puerto
+  },
 });
