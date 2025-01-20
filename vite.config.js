@@ -1,11 +1,20 @@
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 export default defineConfig({
   plugins: [vue()],
   resolve: {
-    alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
+    alias: [
+      {
+        find: '@', // Tu alias
+        replacement: resolve(__dirname, './src'), 
+      },
+    ],
   },
-  server: {
-    host: true,  // Permite que otros dispositivos accedan
-    port: 5173,  // Cambia el puerto si es necesario
-    strictPort: true, // Evita que cambie el puerto automáticamente
-  },
+  base: '/',
 });
