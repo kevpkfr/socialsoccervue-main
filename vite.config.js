@@ -1,4 +1,3 @@
-// vite.config.js
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { fileURLToPath } from 'url';
@@ -10,15 +9,13 @@ const __dirname = dirname(__filename);
 export default defineConfig({
   plugins: [vue()],
   resolve: {
-    alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
+    alias: [
+      { find: '@', replacement: resolve(__dirname, './src') }
+    ],
   },
   server: {
-    host: '0.0.0.0',
-    port: process.env.PORT || 5173,
+    host: '0.0.0.0', // Permite acceso en Railway
+    port: process.env.PORT || 5173, // Puerto dinámico en Railway
     strictPort: true,
   },
-  build: {
-    outDir: 'dist',
-  },
-  base: '/', // Asegura que las rutas funcionen correctamente en producción
 });
